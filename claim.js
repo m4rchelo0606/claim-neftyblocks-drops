@@ -26,12 +26,7 @@ data=[ //action      имя акка     не меняем      номер др�
  ]
  
 
-///data=[
- ///   {name:'claimwproof',actor:'waxisawesomq',permission:'owner', drop_id:1013, amount:1,  asset_ids:[1099525148997]},
- ///   {name:'claimwproof',actor:'waxisawesomq',permission:'owner', drop_id:1026, amount:1,  asset_ids:[1099525148997]},
- ///   {name:'claimwproof',actor:'waxisawesomq',permission:'owner', drop_id:1025, amount:1,  asset_ids:[1099525148997]},
-  ///  {name:'claimwproof',actor:'waxisawesomq',permission:'owner', drop_id:1024, amount:1,  asset_ids:[1099525148997]}
- //   ]
+
 
 
 saletime =1642618800000    // время дропа
