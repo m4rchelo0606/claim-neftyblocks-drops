@@ -1,0 +1,13 @@
+{
+  "name": "@waxio/offline-transfer",
+  "description": "Example of how to do an offline signature using eosjs and the eosio.token contract's transfer action",
+  "author": "WAX",
+  "scripts": {
+    "claim": "node claim.js"
+  },
+  "dependencies": {
+    "eosjs": "^22.1.0",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.6"
+  }
+}
