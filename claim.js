@@ -18,11 +18,8 @@ const signatureProvider = new JsSignatureProvider([privateKey]);
 const url='https://wax.pink.gg'       //url эндпоинта можно не менять
 
 
-data=[ //action      имя акка     не меняем      номер дропа  количество    ид нфт которое храните  
- {name:'claimwproof',actor:'',permission:'owner', drop_id:92460, amount:1,  asset_ids:[]},
- {name:'claimwproof',actor:'',permission:'owner', drop_id:92462, amount:1,  asset_ids:[]},
- {name:'claimwproof',actor:'',permission:'owner', drop_id:92459, amount:1,  asset_ids:[]},
- {name:'claimwproof',actor:'',permission:'owner', drop_id:92456, amount:1,  asset_ids:[]}
+data=[ //action      имя акка     не меняем       номер дропа     количество   
+ {name:'claimdropwl',actor:'',permission:'owner', drop_id:92460, amount:1}
  ]
  
 
@@ -81,7 +78,6 @@ async function gen_trx(data) {
        claimer: data.actor,
        drop_id: data.drop_id,
        amount: data.amount,
-       asset_ids:data.asset_ids,
        intended_delphi_median: 0,
        referrer:"NeftyBlocks",
        country:"RU",
@@ -118,15 +114,13 @@ async function push_trx(url,transaction){
   
 async function run(){
  trx_1=await gen_trx(data[0])
- trx_2=await gen_trx(data[1])
- trx_3=await gen_trx(data[2])
-  trx_4=await gen_trx(data[3])
   tasks=[]
-  tasks.push(push_trx(url,await trx_1),push_trx(url,await trx_2),push_trx(url,await trx_3),push_trx(url,await trx_4))
+  tasks.push(push_trx(url,await trx_1))
 
   while (true) {
   var now = Date.now()
   console.log(Date.now())
+  
    if (now>=saletime-howearly){
    console.log(Date.now())
    Promise.all(tasks)
